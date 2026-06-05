@@ -1,16 +1,71 @@
-# React + Vite
+**🎟️ Ceki Ceki - War Tiket Online
+ 📖 Deskripsi**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ceki Ceki adalah aplikasi antrean virtual untuk pembelian tiket event secara online. Sistem ini membantu pengguna mendapatkan tiket secara adil dan terstruktur melalui mekanisme antrean digital sehingga mengurangi risiko penumpukan pengguna dan praktik bot saat war tiket.
 
-Currently, two official plugins are available:
+** ✨ Fitur Utama**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Login dan Registrasi Pengguna
+* Beranda Daftar Event
+* Pencarian Event
+* Detail Event
+* Pemilihan Tiket
+* Sistem Antrean Virtual
+* Pembayaran Tiket
+* E-Tiket Pengguna
+* Profil Pengguna
+* Halaman About Us
 
-## React Compiler
+**🛠️ Teknologi yang Digunakan
+**
+** Frontend**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React.js
+* Vite
+* React Router DOM
+* Tailwind CSS
 
-## Expanding the ESLint configuration
+**Backend (Perancangan)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Node.js
+* PostgreSQL
+* Redis
+
+** Payment Gateway (Perancangan)**
+
+* Midtrans
+
+ **📂 Struktur Halaman**
+
+* Splash Screen
+* Login
+* Register
+* Home
+* Cari Event
+* Detail Event
+* Pilih Tiket
+* Antrean Virtual
+* Pembayaran
+* Sukses Pembayaran
+* Tiket Saya
+* Profil
+* About Us
+
+**👥 Tim Pengembang**
+
+** Kelompok 2**
+
+| Nama                        | NIM         | Peran                                  |
+| --------------------------- | ----------- | -------------------------------------- |
+| Viktoria Angelita Setiabudi | 25051204443 | Project Manager & Full Stack Developer |
+| Azka Maristza Assadel       | 25051204262 | UI/UX Designer                         |
+| Fakhrur Rohman              | 25051204373 | Quality Assurance                      |
+
+**🎓 Informasi Akademik**
+
+Mata Kuliah: Rekayasa Perangkat Lunak
+
+Universitas: Universitas Negeri Surabaya
+
+Tahun Akademik: 2025/2026
+
