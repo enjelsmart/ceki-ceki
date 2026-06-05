@@ -105,7 +105,7 @@ function Home() {
           {eventFiltered.map((event) => (
             <div
               key={event.id}
-              onClick={() => navigate("/pilih-tiket")}
+              onClick={() => navigate("/detail-event")}
               className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4 cursor-pointer active:scale-95 transition"
             >
               <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
@@ -137,8 +137,8 @@ function Home() {
         <div className="flex justify-around">
           {[
             { icon: "🏠", label: "Home", path: "/home", active: true },
-            { icon: "🔍", label: "Cari", path: "/home", active: false },
-            { icon: "🎟️", label: "Tiket", path: "/sukses", active: false },
+            { icon: "🔍", label: "Cari", path: "/cari", active: false },
+            { icon: "🎟️", label: "Tiket", path: "/tiket-saya", active: false },
             { icon: "👤", label: "Profil", path: "/profil", active: false },
           ].map((item) => (
             <button

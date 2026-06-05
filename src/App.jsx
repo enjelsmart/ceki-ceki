@@ -64,7 +64,7 @@ function App() {
             <p className="text-center text-xs text-gray-500">
               Belum punya akun?{" "}
               <span
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/register")}
                 className="text-[#1A56DB] font-bold cursor-pointer"
               >
                 Daftar

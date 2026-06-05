@@ -7,15 +7,6 @@ function Register() {
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
 
-  const handleRegister = () => {
-    if (!nama || !email || !password) {
-      alert("Semua field harus diisi!")
-      return
-    }
-    alert("Registrasi berhasil! Silakan login.")
-    navigate("/")
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1A56DB] to-[#3B82F6] flex items-center justify-center px-6">
       <div className="w-full max-w-sm">
@@ -67,7 +58,15 @@ function Register() {
             </div>
 
             <button
-              onClick={handleRegister}
+              type="button"
+              onClick={() => {
+                if (!nama || !email || !password) {
+                  alert("Semua field harus diisi!")
+                  return
+                }
+                alert("Registrasi berhasil! Silakan login.")
+                navigate("/login")
+              }}
               className="w-full bg-[#1A56DB] text-white py-3 rounded-xl font-bold text-sm hover:bg-blue-700 transition"
             >
               Daftar Sekarang

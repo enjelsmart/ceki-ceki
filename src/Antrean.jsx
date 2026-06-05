@@ -3,26 +3,63 @@ import { useNavigate } from "react-router-dom"
 
 function Antrean() {
   const navigate = useNavigate()
+  const [fase, setFase] = useState("waiting") // "waiting" | "antrean"
+  const [waitingHitung, setWaitingHitung] = useState(5)
   const [posisi, setPosisi] = useState(247)
   const [estimasi, setEstimasi] = useState(8)
   const total = 5840
   const sesiAman = 15
 
+  // Waiting Room countdown
   useEffect(() => {
+    if (fase !== "waiting") return
     const interval = setInterval(() => {
-      setPosisi(prev => {
+      setWaitingHitung(prev => {
         if (prev <= 1) {
           clearInterval(interval)
-          return 1
+          setFase("antrean")
+          return 0
         }
+        return prev - 1
+      })
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [fase])
+
+  // Antrean countdown
+  useEffect(() => {
+    if (fase !== "antrean") return
+    const interval = setInterval(() => {
+      setPosisi(prev => {
+        if (prev <= 1) { clearInterval(interval); return 1 }
         return prev - 1
       })
       setEstimasi(prev => Math.max(1, prev - 0.1))
     }, 3000)
     return () => clearInterval(interval)
-  }, [])
+  }, [fase])
 
   const progress = ((total - posisi) / total) * 100
+
+  if (fase === "waiting") {
+    return (
+      <div className="min-h-screen bg-[#1A56DB] flex flex-col items-center justify-center px-6">
+        <div className="text-center">
+          <div className="w-24 h-24 rounded-full bg-white bg-opacity-20 flex items-center justify-center mx-auto mb-6">
+            <span className="text-5xl font-bold text-white">{waitingHitung}</span>
+          </div>
+          <h1 className="text-white font-bold text-xl mb-2">Waiting Room</h1>
+          <p className="text-blue-200 text-sm mb-8">Mohon tunggu, sistem sedang memverifikasi aksesmu...</p>
+          <div className="bg-white bg-opacity-10 rounded-2xl p-4 text-left space-y-2 max-w-xs mx-auto">
+            <p className="text-white text-xs font-semibold">RAISA World Tour 2026</p>
+            <p className="text-blue-200 text-xs">🎟️ VIP — Rp250.000</p>
+            <p className="text-blue-200 text-xs">📍 GBK, Jakarta · 15 Mei 2026</p>
+          </div>
+          <p className="text-blue-300 text-xs mt-6">Jangan tutup halaman ini</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[#1A56DB] flex flex-col">
@@ -47,8 +84,6 @@ function Antrean() {
           <span className="text-white text-6xl font-bold">{posisi}</span>
           <span className="text-blue-200 text-xs mt-1">dari {total.toLocaleString()}</span>
         </div>
-
-        {/* Progress Bar */}
         <div className="w-64 h-2 bg-white bg-opacity-20 rounded-full mt-6">
           <div
             className="h-2 bg-white rounded-full transition-all duration-500"
